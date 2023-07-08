@@ -1,0 +1,13 @@
+{% extends 'menu.html' %}
+{% block conteudo %}
+<h2>Adicionar Novo Contato</h2>
+<hr>
+<form action="{{url_for('adiciona_contato')}}" method="POST" class="form-control">
+    <label>Nome</label>
+    <input class="form-control" type="text" name="nome" placeholder="Nome do Contato">
+    <label>Telefone</label>
+    <input class="form-control" type="text" name="telefone" placeholder="Telefone">
+    <button class="btn btn-success">Adicionar</button>
+</form>
+
+{% endblock conteudo %}

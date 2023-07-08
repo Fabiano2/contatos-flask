@@ -1,0 +1,28 @@
+{% extends 'menu.html' %}
+{% block conteudo %}
+<h1>Lista de contatos</h1>
+<hr>
+<a href="{{url_for('adiciona_contato')}}" id="btnnovo_contato" class="btn btn-secondary">Novo Contato</a>
+<hr>
+<table class="table">
+    <table class="table table-bordered table-hover">
+        <th scope="col">Cod</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+{% for c in contatos %}
+<tr>
+    <td>{{c.id}}</td>
+    <td>{{c.nome}}</td>
+    <td>{{c.telefone}}</td>
+    <td>
+        <a href="{{c.id}}/atualiza_lista"><button type="button" class="btn btn-outline-info">Edit</button></a>
+    </td>
+</tr>
+{% endfor %}
+    </tbody>
+</table>
+<a href="{{url_for('adiciona_contato')}}" id="btnnovo_contato" class="btn btn-secondary">Novo Contato</a>
+{% endblock conteudo %}

@@ -1,0 +1,14 @@
+{% extends 'menu.html' %}
+{% block conteudo %}
+<h1>Atualizar contato</h1>
+<hr>
+    {{contato.nome}}
+<form action="{{url_for('atualiza_lista', id=contato.id)}}" method="POST" class="form-control">
+    <label>Nome</label>
+    <input class="form-control" type="text" name="nome" value="{{contato.nome}}" placeholder="Nome">
+    <label>Telefone</label>
+    <textarea class="form-control" name="telefone" value="{{contato.telefone}}">{{contato.telefone}}</textarea>
+    <button class="btn btn-success">Editar</button>
+</form>
+
+{% endblock conteudo %}
