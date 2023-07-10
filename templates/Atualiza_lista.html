@@ -2,7 +2,11 @@
 {% block conteudo %}
 <h1>Atualizar contato</h1>
 <hr>
-    {{contato.nome}}
+{%- for mensagem in get_flashed_messages() %}
+<div class="alert alert-danger">
+    {{mensagem}}
+</div>
+{%- endfor %}
 <form action="{{url_for('atualiza_lista', id=contato.id)}}" method="POST" class="form-control">
     <label>Nome</label>
     <input class="form-control" type="text" name="nome" value="{{contato.nome}}" placeholder="Nome">

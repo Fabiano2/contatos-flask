@@ -18,8 +18,10 @@
     <td>{{c.nome}}</td>
     <td>{{c.telefone}}</td>
     <td>
-        <a href="{{c.id}}/atualiza_lista"><button type="button" class="btn btn-outline-info">Edit</button></a>
+        <a href="{{c.id}}/atualiza_lista"><button type="button" class="btn btn-primary">Edit</button></a>
+        <a href="{{c.id}}/exclui_contato"><button type="button" class="btn btn-danger">Delete</button></a>
     </td>
+</tr>
 </tr>
 {% endfor %}
     </tbody>
